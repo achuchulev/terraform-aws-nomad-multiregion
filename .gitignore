@@ -7,3 +7,17 @@
 
 # .tfvars files
 *.tfvars
+
+**/.DS_Store
+.DS_Store
+
+ssl/*
+
+# Exclude easy-rsa tool folder
+**/easy-rsa/*
+
+# Exclude certs dir
+**/vpn_certs/*
+
+# exclude client vpn endpoint configuration file
+client-config.ovpn
