@@ -70,7 +70,7 @@ module "aws_client_vpn" {
   aws_secret_key = var.secret_key
   aws_region     = var.aws_region_a
   subnet_id      = module.new_aws_vpc_a.subnet_ids[0]
-  domain         = "ntry.site"
+  domain         = var.cloudflare_zone
 }
 
 // ************* NOMAD ************* //
@@ -83,6 +83,9 @@ module "nomad_cluster_on_aws_a" {
   access_key                 = var.access_key
   secret_key                 = var.secret_key
   region                     = var.aws_region_a
+  ami_nomad_server           = var.ami_nomad_server_a
+  ami_nomad_client           = var.ami_nomad_client_a
+  ami_frontend               = var.ami_frontend_a
   aws_vpc_id                 = module.new_aws_vpc_a.vpc_id
   frontend_subnet_id         = module.new_aws_vpc_a.subnet_ids[0]
   server_subnet_id           = module.new_aws_vpc_a.subnet_ids[1]
@@ -106,9 +109,9 @@ module "nomad_cluster_on_aws_b" {
   access_key                 = var.access_key
   secret_key                 = var.secret_key
   region                     = var.aws_region_b
-  ami_nomad_server           = var.ami_nomad_server
-  ami_nomad_client           = var.ami_nomad_client
-  ami_frontend               = var.ami_frontend
+  ami_nomad_server           = var.ami_nomad_server_b
+  ami_nomad_client           = var.ami_nomad_client_b
+  ami_frontend               = var.ami_frontend_b
   aws_vpc_id                 = module.new_aws_vpc_b.vpc_id
   frontend_subnet_id         = module.new_aws_vpc_b.subnet_ids[0]
   server_subnet_id           = module.new_aws_vpc_b.subnet_ids[1]
