@@ -61,6 +61,9 @@ variable "authoritative_region" {
   default = "aws"
 }
 
-variable "ami_nomad_server" {}
-variable "ami_nomad_client" {}
-variable "ami_frontend" {}
+variable "ami_nomad_server_a" {}
+variable "ami_nomad_client_a" {}
+variable "ami_frontend_a" {}
+variable "ami_nomad_server_b" {}
+variable "ami_nomad_client_b" {}
+variable "ami_frontend_b" {}
