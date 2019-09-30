@@ -62,7 +62,7 @@ module "aws_vpc_peering" {
   requester_vpc_id         = module.new_aws_vpc_b.vpc_id
 }
 
-# Module to create Client VPN
+# Module to create Clientye VPN
 module "aws_client_vpn" {
   source = "git@github.com:achuchulev/terraform-aws-client-vpn-endpoint.git"
 
