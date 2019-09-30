@@ -47,8 +47,8 @@ module "new_aws_vpc_b" {
     Side = var.vpc_tag_side_b
   }
 }
+  
 # Module that creates new VPC Peering between AWS RegionA <-> AWS RegionB
-
 module "aws_vpc_peering" {
   source = "git@github.com:achuchulev/terraform-aws-vpc-peering.git"
 
@@ -62,7 +62,7 @@ module "aws_vpc_peering" {
   requester_vpc_id         = module.new_aws_vpc_b.vpc_id
 }
 
-# Module to create Clientye VPN
+# Module to create Client VPN
 module "aws_client_vpn" {
   source = "git@github.com:achuchulev/terraform-aws-client-vpn-endpoint.git"
 
@@ -73,10 +73,9 @@ module "aws_client_vpn" {
   domain         = var.cloudflare_zone
 }
 
-// ************* NOMAD ************* //
+// ************* NOMAD compute ************* //
 
 # Module that creates Nomad cluster (servers/clients/frontend) on AWS Region A
-
 module "nomad_cluster_on_aws_a" {
   source = "git@github.com:achuchulev/terraform-aws-nomad.git"
 
@@ -102,7 +101,6 @@ module "nomad_cluster_on_aws_a" {
 }
 
 # Module that creates Nomad cluster (servers/clients/frontend) on AWS Region B
-
 module "nomad_cluster_on_aws_b" {
   source = "git@github.com:achuchulev/terraform-aws-nomad.git"
 
