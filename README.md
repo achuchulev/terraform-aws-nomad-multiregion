@@ -2,7 +2,7 @@
 
 ## High Level Overview
 
-<img src="diagrams/aws-multiregion.png" />
+<img src="diagrams/aws-nomad-mutiregion.png" />
 
 ## How to deploy
 
