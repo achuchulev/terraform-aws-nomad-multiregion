@@ -65,8 +65,8 @@ Note: This is based on official AWS tutorial described [here](https://docs.aws.a
 #### Deploy Nomad multicloud infrastructure
 
 ```
-terraform plan
-terraform apply
+$ terraform plan
+$ terraform apply
 ```
 
 - `Terraform apply` will create:
