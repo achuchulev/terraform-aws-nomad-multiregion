@@ -47,7 +47,7 @@ module "new_aws_vpc_b" {
     Side = var.vpc_tag_side_b
   }
 }
-  
+
 # Module that creates new VPC Peering between AWS RegionA <-> AWS RegionB
 module "aws_vpc_peering" {
   source = "git@github.com:achuchulev/terraform-aws-vpc-peering.git"
