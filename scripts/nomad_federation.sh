@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+sleep 20
+
 # API endpoint for Nomad server Join Agent
 curl \
     --request POST \
